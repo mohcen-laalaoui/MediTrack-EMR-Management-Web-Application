@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Signup</title>
+    <link rel="stylesheet" href="signup-patient.component.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Signup for Medical Services</h1>
+        <form (ngSubmit)="onSubmit()" method="post">
+
+            <div class="left">
+                <h2>Personal Information</h2>
+
+                <label for="firstname">First Name: <span style="color: red;">*</span></label>
+                <input type="text" id="firstname" name="firstname" [(ngModel)]="signupObj.firstname" required>
+
+                <label for="lastname">Last Name: <span style="color: red;">*</span></label>
+                <input type="text" id="lastname" name="lastname" [(ngModel)]="signupObj.lastname" required>
+
+                <label for="dob">Date of Birth: <span style="color: red;">*</span></label>
+                <input type="date" id="dob" name="dob" [(ngModel)]="signupObj.dob" required>
+
+                <label for="address">Address: <span style="color: red;">*</span></label>
+                <textarea id="address" name="address" [(ngModel)]="signupObj.address" required></textarea>
+
+                <label for="phone">Phone Number: <span style="color: red;">*</span></label>
+                <input type="tel" id="phone" name="phone" [(ngModel)]="signupObj.phone" required>
+
+                <label for="email">E-mail: <span style="color: red;">*</span></label>
+                <input type="email" id="email" name="email" [(ngModel)]="signupObj.email" required>
+
+                <label for="password">Password: <span style="color: red;">*</span></label>
+                <div class="password-container">
+                    <input type="password" [(ngModel)]="signupObj.password" name="password">
+                    <i class="fas fa-eye" (click)="togglePasswordVisibility()"></i>
+                </div>
+
+
+                <label for="confirm_password">Confirm Password: <span style="color: red;">*</span></label>
+                <input type="password" id="confirm_password" name="confirm_password"
+                    [(ngModel)]="signupObj.confirm_password" required>
+
+                <label>Gender: <span style="color: red;">*</span></label>
+                <div class="radio-container">
+                    <input type="radio" id="male" name="Gender" [(ngModel)]="signupObj.Gender" value="male" checked>
+                    <label for="male">Male</label>
+                </div>
+
+                <div class="radio-container">
+                    <input type="radio" id="female" name="Gender" [(ngModel)]="signupObj.Gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <!-- Additional Medical Information -->
+
+            </div>
+            <div class="middle">
+                <h2>Medical Information</h2>
+
+                <label for="blood">Blood type: <span style="color: red;">*</span></label>
+                <select id="blood" [(ngModel)]="signupObj.blood" name="bloodPatient">
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+
+                <label for="insurance_provider">Insurance Provider: </label>
+                <input type="text" id="insurance_provider" [(ngModel)]="signupObj.insurance_provider"
+                    name="insurance_provider" required>
+
+                <label for="medical_history">Medical History:</label>
+                <textarea id="medical_history" name="medical_history"
+                    [(ngModel)]="signupObj.medical_history"></textarea>
+
+                <label for="allergies">Allergies: </label>
+                <input type="text" id="allergies" name="allergies" [(ngModel)]="signupObj.allergies">
+
+                <label for="currentMedications">Current Medications: </label>
+                <input type="text" id="currentMedications" name="currentMedications"
+                    [(ngModel)]="signupObj.currentMedications">
+
+                <label for="surgeries">Previous Surgeries or Medical Procedures: </label>
+                <input type="text" id="surgeries" name="surgeries" [(ngModel)]="signupObj.surgeries">
+
+                <label for="diseases">Does the patient suffer from any chronic diseases?</label>
+                <div class="radio-container">
+                    <input type="radio" id="yes" name="diseases" [(ngModel)]="signupObj.diseases" value="yes">
+                    <label for="yes">Yes</label>
+                </div>
+
+                <div class="radio-container">
+                    <input type="radio" id="no" name="diseases" [(ngModel)]="signupObj.diseases" value="no" checked>
+                    <label for="no">No</label>
+                </div>
+
+            </div>
+            <div class="right">
+                <h2>Emergency Contact Information</h2>
+                <label for="fullname">Full Name: <span style="color: red;">*</span></label>
+                <input type="text" id="fullname" name="fullname" [(ngModel)]="signupObj.fullname" required>
+
+                <label for="relationship">Relationship: <span style="color: red;">*</span></label>
+                <select id="relationship" name="relation" [(ngModel)]="signupObj.relationship">
+                    <option value="">Father</option>
+                    <option value="">Mother</option>
+                    <option value="">Brother</option>
+                    <option value="">Sister</option>
+                    <option value="">Son</option>
+                    <option value="">Daughter</option>
+                    <option value="">Uncle</option>
+                    <option value="">Other</option>
+                </select>
+
+                <label for="phonenumber">Phone Number: <span style="color: red;">*</span></label>
+                <input type="tel" id="phonenumber" name="phnum" [(ngModel)]="signupObj.phonenumber" required>
+
+                <div class="divider"></div>
+                <div class="signup-with">
+                    <span>Or Signup With:</span>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" class="icon-facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon-twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="icon-google"><i class="fab fa-google"></i></a>
+                </div>
+
+                <button type="button" class="submit-button" (click)="onSubmit()">Create Account</button>
+            </div>
+
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+    <script src="signup-patient.component.ts"></script>
+</body>
+
+</html>

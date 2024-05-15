@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients Information</title>
+    <link rel="stylesheet" href="patinets.component.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Patients Information</h1>
+        <button (click)="toggleForm()">Add Patient</button>
+        <div *ngIf="showForm" class="add-patient-form">
+            <h2>Add Patient</h2>
+            <form (submit)="addPatient()">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="newPatient.name" required>
+                </div>
+                <div>
+                    <label for="labResults">Phone:</label>
+                    <input type="text" id="phone" name="phone" [(ngModel)]="newPatient.phone" required>
+                </div>
+                <div>
+                    <label for="medicalHistory">Medical History:</label>
+                    <textarea id="medicalHistory" name="medicalHistory" [(ngModel)]="newPatient.medicalHistory"
+                        required></textarea>
+                </div>
+                <div>
+                    <label for="Gender">Gender: </label>
+                    <select id="Gender" name="gender" [(ngModel)]="newPatient.gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Bloodtype">Blood type: </label>
+                    <select id="blood" name="bloodType" [(ngModel)]="newPatient.bloodType">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="prescriptions">Prescriptions:</label>
+                    <input type="text" id="prescriptions" name="prescriptions" [(ngModel)]="newPatient.prescriptions"
+                        required>
+                </div>
+                <div>
+                    <label for="Chronic diseases">Chronic diseases:</label>
+                    <input type="text" id="Chronicdiseases" name="Chronicdiseases"
+                        [(ngModel)]="newPatient.chronicDiseases" required>
+                </div>
+                <div>
+                    <label for="medications">Medications:</label>
+                    <input type="text" id="medications" name="medications" [(ngModel)]="newPatient.medications"
+                        required>
+                </div>
+                <button type="submit" onclick="addPatient()">Add Patient</button>
+            </form>
+        </div>
+        <table class="patients-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Blood type</th>
+                    <th>Medical history</th>
+                    <th>Medications</th>
+                    <th>Chronic diseases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patients">
+                    <td>{{ patient.PatientID }}</td>
+                    <td>{{ patient.LastName }}</td>
+                    <td>{{ patient.PhoneNumber }}</td>
+                    <td>{{ patient.Gender }}</td>
+                    <td>{{ patient.BloodType }}</td>
+                    <td>{{ patient.MedicalHistory }}</td>
+                    <td>{{ patient.CurrentMedications }}</td>
+                    <td>{{ patient.PreviousSurgeries }}</td>
+                    <td>{{ patient.ChronicDiseases }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0056b3;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+
+.left {
+  grid-column: 1 / 2;
+}
+
+.middle {
+  grid-column: 2 / 3;
+}
+.right {
+  grid-column: 3 / 4;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-container input[type="radio"] {
+  margin-right: 5px;
+}
+
+.radio-container label {
+  margin-right: 10px;
+}
+
+p {
+  font-weight: 600;
+  text-align: center;
+}
+p a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #0056b3;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  margin-top: 26%;
+  margin-left: 60%;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:active {
+  background-color: #4caf50; /* Green background when button is clicked */
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.divider {
+  margin: 40px auto;
+  width: 80%;
+  border-bottom: 2px solid #ccc;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  color: #555;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #55a5ff;
+  color: #fff;
+}
+
+.icon-facebook {
+  background: #3b5998;
+}
+
+.icon-twitter {
+  background: #55acee;
+}
+
+.icon-google {
+  background: #dd4b39;
+}
+
+.signup-with {
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.signup-with p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 300;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.signup-with span {
+  margin-right: 10px;
+}
